@@ -9,7 +9,7 @@ width:80%;
 const InnerNav=styled.div`
 display:flex;
 justify-content:space-between;
-
+cursor:pointer;
 `
 const NavLeft=styled.div`
 display:flex;

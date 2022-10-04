@@ -28,7 +28,8 @@ color:white;
 text-align:center;
 font-size:2rem;`
 const Para=styled.p`
-color:white;`
+color:white;
+`
 const QuoteIcons=styled.div``
 // const QuotePara=styled.div``
 const Button=styled.button`
@@ -49,7 +50,8 @@ const ButtonQuote=styled.button`
 padding:1em 2em;
 box-shadow:0 0 2em grey;
 border-radius:5px;
-border:none;`
+border:none;
+color:red;`
 
 
 
@@ -57,6 +59,10 @@ const Quotes=()=>{
     const [ThumbUp, setThumbUp]=useState(0)
     const [ThumbDown, setThumbDown]=useState(0)
     const [data,setData]=useState([])
+    const[like, setLike]=useState({
+        likes:false,
+        dislike:false
+    })
     
     useEffect(()=>{
         const fetchData = async ()=>{
@@ -99,9 +105,9 @@ const Quotes=()=>{
                                 <QuotePara>{item.postedby}</QuotePara>
 
             <ThumbsIcon>
-            <Button onClick={()=>setThumbUp(ThumbUp + 1)}><ThumbUpIcon/>{`${ThumbUp<1 ? '' : ThumbUp}`} </Button>
+            <Button onClick={(e)=>setLike(prev=>!prev)}><ThumbUpIcon/>{like.likes? 1:""} </Button>
 
-            <Button onClick={()=> setThumbDown(ThumbDown + 1)}> <ThumbDownIcon/> {`${ThumbDown<1 ? '' : ThumbDown}`}</Button>
+            <Button onClick={(e)=>setLike(prev=>!prev)}> <ThumbDownIcon/> {like.dislike?1 :""}</Button>
             
         </ThumbsIcon>
 
