@@ -1,7 +1,12 @@
+import {Link} from "react-router-dom"
 import {React} from 'react';
 import styled from "styled-components"
 import NotificationsIcon from '@mui/icons-material/Notifications';
-const NavContainer=styled.div``
+
+
+const NavContainer=styled.div`
+background:#B4CDE6;
+`
 const Container=styled.div`
 margin:0 auto;
 width:80%;
@@ -32,24 +37,26 @@ const NavRight=styled.div`
 
 const Nav=()=>{
     return(
+        
         <NavContainer>
             <Container>
                 <InnerNav>
             <NavLeft>
-            <NavPara>Name</NavPara>
-            <NavList>Add Quote</NavList>
+            <NavPara><Link to="/">Home</Link></NavPara>
+            <NavList><Link to="/QuoteAdd">Add Quote</Link></NavList>
             </NavLeft>
             <NavRight>
                 <NavUl>
             <NavList>
             <NotificationsIcon/>
             </NavList>
-            <NavList>Login/Register</NavList>
+            <NavList><Link to="/Login">Login/Register</Link></NavList>
             </NavUl>
             </NavRight>
             </InnerNav>
             </Container>
         </NavContainer>
+        
     )
 }
 export default Nav

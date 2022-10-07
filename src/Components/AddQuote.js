@@ -20,6 +20,8 @@ const Input=styled.input`
 `
 const Button=styled.button`
 width:10%;
+border-radius:5px;
+
 
 // border:none;
 // background:gold;
@@ -46,7 +48,9 @@ const AddQuote=()=>{
         date:new Date(),
         like:0,
         dislike:0,
-        postedby:""
+        postedby:"",
+        edit:"",
+        delete:""
     })
 
     const handleAddQuote= async()=>{
@@ -101,15 +105,14 @@ const AddQuote=()=>{
                 <Label>Date</Label>
                 <Input type="text" placeholder="Date" onChange={(event)=>setAddQuote({...AddQuote,date:event.target.value})}/>
                 <Label></Label>
-                <Button onClick={()=>setAddQuote({})}>Like</Button>
-                <Button>Dislike</Button>
+               
+                
                 <Label>Posted By:</Label>
                 <Para>{errors.postedbyError} {color}</Para>
                 <Input type="text" placeholder="Posted By:" onChange={(event)=>setAddQuote({...AddQuote,postedby:event.target.value})}/>
-                <div style={{display:"flex", gap:"2em"}}>
-                <Button>Delete</Button>
-                <Button>Edit</Button>
-                </div>
+                {/* <div style={{display:"flex", gap:"2em"}}>
+                
+                </div> */}
                 <Button onClick={handleAddQuote}>Add Quote</Button>
                 
 

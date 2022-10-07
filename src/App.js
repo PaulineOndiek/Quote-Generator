@@ -1,18 +1,20 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import Nav from "./Components/Nav";
-import Quote from "./Components/Quote";
-// import AddQuote from "./Components/AddQuote";
-// import Login from "./Pages/Login"
+import {BrowserRouter, Routes, Route, Links} from "react-router-dom"
+import logo from './logo.svg';
+import './App.css';
+import Home from "./Pages/Home";
+import QuoteAdd from "./Pages/QuoteAdd"
+import Login from "./Pages/Login"
 
 function App() {
   return (
-    <div>
-     {/* <Nav/> */}
-     <Quote/>
-     {/* <AddQuote/> */}
-     {/* <Login/> */}
-    </div>
+    <BrowserRouter>  
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/Login" element={<Login/>}></Route>
+      <Route path="/QuoteAdd" element={<QuoteAdd/>}></Route>
+    </Routes>
+  
+    </BrowserRouter>
   );
 }
 

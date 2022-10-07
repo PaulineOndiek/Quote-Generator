@@ -3,7 +3,6 @@ import Nav from "./Nav"
 const Quote=()=>{
     return(
         <>
-        <Nav/>
         <Quotes/>
         </>
     )
