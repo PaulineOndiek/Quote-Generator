@@ -24,7 +24,7 @@ const QuoteBackground = styled.div`
   background-repeat: no-repeat;
   height: 60vh;
   width: 80vw;
-`;
+`
 const QuotePara = styled.p`
   color: white;
   text-align: center;
@@ -45,7 +45,8 @@ font
 
 `;
 const ThumbsIcon = styled.div`
-  display: flex;
+  display: flex:center;
+  align-items:
   gap: 2em;
   color: white;
 `;
